@@ -14,8 +14,60 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* header */}
+      <header>
+        <img src="" alt="" />
+        <nav>
+          <a href="/"> Home</a>
+          <a href="/events"> Events</a>
+          <a href="/about"> About Us</a>
+        </nav>
+      </header>
       <main className={styles.main}>
-        <h1>Hello there!</h1>
+        <a href="">
+          <img src="" alt="" />
+          <h2>Events in London</h2>
+          <p>
+            My still chamber lent the door quoth loneliness the hauntedtell,
+            bust truly the the nights oer not these, nightly to grew midnight
+            open each. That said i the nevernevermore theeby i unseen gloated
+            our, if chamber still with be one oh respiterespite betook. For of
+            but me hear rapping nevermore..Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Incidunt, in veniam et, quia id earum
+            quisquam iste praesentium iure perferendis officiis quas iusto.
+            Laboriosam qui dolore alias at dignissimos quidem!
+          </p>
+        </a>
+
+        <a href="">
+          <img src="" alt="" />
+          <h2>Events in Doha</h2>
+          <p>
+            My still chamber lent the door quoth loneliness the hauntedtell,
+            bust truly the the nights oer not these, nightly to grew midnight
+            open each. That said i the nevernevermore theeby i unseen gloated
+            our, if chamber still with be one oh respiterespite betook. For of
+            but me hear rapping nevermore..Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Incidunt, in veniam et, quia id earum
+            quisquam iste praesentium iure perferendis officiis quas iusto.
+            Laboriosam qui dolore alias at dignissimos quidem!
+          </p>
+        </a>
+
+        <a href="">
+          <img src="" alt="" />
+          <h2>Events in Dhaka</h2>
+          <p>
+            My still chamber lent the door quoth loneliness the hauntedtell,
+            bust truly the the nights oer not these, nightly to grew midnight
+            open each. That said i the nevernevermore theeby i unseen gloated
+            our, if chamber still with be one oh respiterespite betook. For of
+            but me hear rapping nevermore..Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Incidunt, in veniam et, quia id earum
+            quisquam iste praesentium iure perferendis officiis quas iusto.
+            Laboriosam qui dolore alias at dignissimos quidem!
+          </p>
+        </a>
       </main>
     </>
   );
