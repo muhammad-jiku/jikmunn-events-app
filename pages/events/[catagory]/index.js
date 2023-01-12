@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
 
-function Page() {
+function EventCatagory() {
   return (
     <div className={styles.main}>
       <h1>Events in london</h1>
@@ -23,4 +23,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default EventCatagory;

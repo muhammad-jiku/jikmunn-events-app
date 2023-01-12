@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from '../../styles/Home.module.css';
 
-function Page() {
+function Events() {
   return (
     <div className={styles.main}>
-      <h1>This is our events page</h1>
+      <h1>This is our events</h1>
       <div>
         <a href="">
           <img src="" alt="" />
@@ -25,4 +25,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Events;
