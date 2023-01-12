@@ -3,11 +3,11 @@ import Link from 'next/link';
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
 
-function EventCategory({ data }) {
+function EventCategory({ data, pageName }) {
   return (
     <div className={styles.main}>
       <div>
-        <h1>All the events here</h1>
+        <h1>All the events in {pageName} city are broadcasting at NTV</h1>
         {data.map((event, idx) => (
           <div key={idx}>
             {' '}
@@ -56,6 +56,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       data: result,
+      pageName: id,
     },
   };
 }
