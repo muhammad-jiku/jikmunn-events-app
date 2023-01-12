@@ -29,7 +29,6 @@ export default Events;
 export async function getStaticProps() {
   const data = await import('/data/data.json');
   const { events_categories } = data;
-  console.log(events_categories);
   return {
     props: {
       data: events_categories,

@@ -24,3 +24,22 @@ function EventCategory() {
 }
 
 export default EventCategory;
+
+export async function getStaticPaths() {
+  const data = await import('/data/data.json');
+  const { events_categories } = data;
+  const allPaths = events_categories?.map((event) => {
+    return {
+      params: {
+        category: event?.id?.toString(),
+      },
+    };
+  });
+
+  console.log(allPaths);
+
+  return {
+    paths: allPaths,
+    fallback: false,
+  };
+}
