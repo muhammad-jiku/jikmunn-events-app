@@ -13,8 +13,8 @@ function Events({ data }) {
             <Image
               src={`${event.image}`}
               alt={`${event.title}`}
-              width={500}
-              height={400}
+              width={200}
+              height={200}
             />
             <h2>{event.title}</h2>
           </a>
