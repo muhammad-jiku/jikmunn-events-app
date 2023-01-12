@@ -2,11 +2,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home({ data }) {
-  console.log(data);
   return (
     <>
       <Head>
@@ -17,58 +17,26 @@ export default function Home({ data }) {
       </Head>
       {/* header */}
       <header>
-        <img src="" alt="" />
+        <Image src="" alt="" />
         <nav>
-          <a href="/"> Home</a>
-          <a href="/events"> Events</a>
-          <a href="/about"> About Us</a>
+          <Link href="/"> Home</Link>
+          <Link href="/events"> Events</Link>
+          <Link href="/about"> About Us</Link>
         </nav>
       </header>
       <main className={styles.main}>
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in London</h2>
-          <p>
-            My still chamber lent the door quoth loneliness the hauntedtell,
-            bust truly the the nights oer not these, nightly to grew midnight
-            open each. That said i the nevernevermore theeby i unseen gloated
-            our, if chamber still with be one oh respiterespite betook. For of
-            but me hear rapping nevermore..Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Incidunt, in veniam et, quia id earum
-            quisquam iste praesentium iure perferendis officiis quas iusto.
-            Laboriosam qui dolore alias at dignissimos quidem!
-          </p>
-        </a>
-
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in Doha</h2>
-          <p>
-            My still chamber lent the door quoth loneliness the hauntedtell,
-            bust truly the the nights oer not these, nightly to grew midnight
-            open each. That said i the nevernevermore theeby i unseen gloated
-            our, if chamber still with be one oh respiterespite betook. For of
-            but me hear rapping nevermore..Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Incidunt, in veniam et, quia id earum
-            quisquam iste praesentium iure perferendis officiis quas iusto.
-            Laboriosam qui dolore alias at dignissimos quidem!
-          </p>
-        </a>
-
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in Dhaka</h2>
-          <p>
-            My still chamber lent the door quoth loneliness the hauntedtell,
-            bust truly the the nights oer not these, nightly to grew midnight
-            open each. That said i the nevernevermore theeby i unseen gloated
-            our, if chamber still with be one oh respiterespite betook. For of
-            but me hear rapping nevermore..Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Incidunt, in veniam et, quia id earum
-            quisquam iste praesentium iure perferendis officiis quas iusto.
-            Laboriosam qui dolore alias at dignissimos quidem!
-          </p>
-        </a>
+        {data.map((event, idx) => (
+          <a key={idx} href={`/events/${event.id}`}>
+            <Image
+              src={`${event.image}`}
+              alt={`${event.title}`}
+              width={500}
+              height={400}
+            />
+            <h2>{event.title}</h2>
+            <p>{event.description}</p>
+          </a>
+        ))}
       </main>
     </>
   );
@@ -76,14 +44,7 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   const data = await import('/data/data.json');
-  const { events_categories, allEvents } = data;
-  // // console.log(data);
-  // // console.log('--------------------------------------------');
-  // // console.log(events_categories);
-  // console.log(
-  //   '----------------------------------------------------------------------------------------'
-  // );
-  // console.log(allEvents);
+  const { events_categories } = data;
   return {
     props: {
       data: events_categories,
