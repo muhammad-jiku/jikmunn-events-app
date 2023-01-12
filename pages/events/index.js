@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import styles from '../../styles/Home.module.css';
 
@@ -9,7 +10,7 @@ function Events({ data }) {
       <h1>This is our events</h1>
       <div>
         {data.map((event, idx) => (
-          <a key={idx} href={`/events/${event.id}`}>
+          <Link key={idx} href={`/events/${event.id}`} passHref>
             <Image
               src={`${event.image}`}
               alt={`${event.title}`}
@@ -17,7 +18,7 @@ function Events({ data }) {
               height={200}
             />
             <h2>{event.title}</h2>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

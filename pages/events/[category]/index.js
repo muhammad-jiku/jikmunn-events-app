@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
 
@@ -10,7 +11,7 @@ function EventCategory({ data }) {
         {data.map((event, idx) => (
           <div key={idx}>
             {' '}
-            <a href={`/events/${event.city}/${event.id}`}>
+            <Link href={`/events/${event.city}/${event.id}`} passHref>
               <Image
                 src={`${event.image}`}
                 alt={`${event.title}`}
@@ -19,7 +20,7 @@ function EventCategory({ data }) {
               />
               <h2>{event.title}</h2>
               <p>{event.description}</p>
-            </a>
+            </Link>
           </div>
         ))}
       </div>

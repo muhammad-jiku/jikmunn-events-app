@@ -15,19 +15,23 @@ export default function Home({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* header */}
       <header>
-        {/* <Image src="" alt="" /> */}
         <nav>
-          <Link href="/"> Home</Link>
-          <Link href="/events"> Events</Link>
-          <Link href="/about"> About Us</Link>
+          <Link href="/" passHref>
+            Home
+          </Link>
+          <Link href="/events" passHref>
+            Events
+          </Link>
+          <Link href="/about" passHref>
+            About Us
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
         <div>
           {data.map((event, idx) => (
-            <a key={idx} href={`/events/${event.id}`}>
+            <Link key={idx} href={`/events/${event.id}`} passHref>
               <Image
                 src={`${event.image}`}
                 alt={`${event.title}`}
@@ -36,7 +40,7 @@ export default function Home({ data }) {
               />
               <h2>{event.title}</h2>
               <p>{event.description}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </main>
