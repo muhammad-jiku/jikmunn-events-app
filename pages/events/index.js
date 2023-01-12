@@ -1,25 +1,24 @@
+import Image from 'next/image';
 import React from 'react';
 import styles from '../../styles/Home.module.css';
 
-function Events() {
+function Events({ data }) {
+  // console.log(data);
   return (
     <div className={styles.main}>
       <h1>This is our events</h1>
       <div>
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in London</h2>
-        </a>
-
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in Doha</h2>
-        </a>
-
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in Dhaka</h2>
-        </a>
+        {data.map((event, idx) => (
+          <a key={idx} href={`/events/${event.id}`}>
+            <Image
+              src={`${event.image}`}
+              alt={`${event.title}`}
+              width={500}
+              height={400}
+            />
+            <h2>{event.title}</h2>
+          </a>
+        ))}
       </div>
     </div>
   );

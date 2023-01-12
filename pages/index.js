@@ -17,7 +17,7 @@ export default function Home({ data }) {
       </Head>
       {/* header */}
       <header>
-        <Image src="" alt="" />
+        {/* <Image src="" alt="" /> */}
         <nav>
           <Link href="/"> Home</Link>
           <Link href="/events"> Events</Link>
@@ -25,18 +25,20 @@ export default function Home({ data }) {
         </nav>
       </header>
       <main className={styles.main}>
-        {data.map((event, idx) => (
-          <a key={idx} href={`/events/${event.id}`}>
-            <Image
-              src={`${event.image}`}
-              alt={`${event.title}`}
-              width={500}
-              height={400}
-            />
-            <h2>{event.title}</h2>
-            <p>{event.description}</p>
-          </a>
-        ))}
+        <div>
+          {data.map((event, idx) => (
+            <a key={idx} href={`/events/${event.id}`}>
+              <Image
+                src={`${event.image}`}
+                alt={`${event.title}`}
+                width={500}
+                height={400}
+              />
+              <h2>{event.title}</h2>
+              <p>{event.description}</p>
+            </a>
+          ))}
+        </div>
       </main>
     </>
   );
