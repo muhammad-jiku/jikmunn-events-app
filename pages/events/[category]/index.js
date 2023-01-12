@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
 
-function EventCatagory() {
+function EventCategory() {
   return (
     <div className={styles.main}>
       <h1>Events in london</h1>
@@ -23,4 +23,4 @@ function EventCatagory() {
   );
 }
 
-export default EventCatagory;
+export default EventCategory;
