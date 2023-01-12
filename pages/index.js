@@ -5,7 +5,8 @@ import styles from '../styles/Home.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({ title }) {
+export default function Home({ data }) {
+  console.log(data);
   return (
     <>
       <Head>
@@ -24,7 +25,6 @@ export default function Home({ title }) {
         </nav>
       </header>
       <main className={styles.main}>
-        <h1>{title}</h1>
         <a href="">
           <img src="" alt="" />
           <h2>Events in London</h2>
@@ -74,10 +74,19 @@ export default function Home({ title }) {
   );
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const data = await import('/data/data.json');
+  const { events_categories, allEvents } = data;
+  // // console.log(data);
+  // // console.log('--------------------------------------------');
+  // // console.log(events_categories);
+  // console.log(
+  //   '----------------------------------------------------------------------------------------'
+  // );
+  // console.log(allEvents);
   return {
     props: {
-      title: 'Hello Events!!',
+      data: events_categories,
     },
   };
 }
