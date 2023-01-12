@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Home.module.css';
 
-function Events() {
+function Page() {
   return (
     <div className={styles.main}>
       <h1>This is our events page</h1>
@@ -25,4 +25,4 @@ function Events() {
   );
 }
 
-export default Events;
+export default Page;
