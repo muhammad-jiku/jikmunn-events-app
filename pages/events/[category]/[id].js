@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../../../styles/Home.module.css';
 
 function SingleEvent({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     <div className={styles.main}>
       <div>
@@ -11,7 +11,7 @@ function SingleEvent({ data }) {
           src={`${data.image}`}
           alt={`${data.title}`}
           width={1000}
-          height={500}
+          height={700}
         />
         <h2>{data.title}</h2>
         <h3>{data.city} City </h3>
