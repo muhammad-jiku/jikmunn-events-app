@@ -1,10 +1,13 @@
 import React from 'react';
+import styles from '../../../styles/Home.module.css';
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <div>
-      <h1>Hello Footer</h1>
-    </div>
+    <footer className={styles.main}>
+      <p> &copy; {year} time to code - Events project built wiht Next.js </p>
+    </footer>
   );
 };
 
