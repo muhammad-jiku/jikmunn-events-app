@@ -10,3 +10,21 @@ function SingleEvent() {
 }
 
 export default SingleEvent;
+
+export async function getStaticPaths() {
+  const data = await import('/data/data.json');
+  const { allEvents } = data;
+  const allPaths = allEvents?.map((event) => {
+    return {
+      params: {
+        category: event.city,
+        id: event?.id,
+      },
+    };
+  });
+
+  return {
+    paths: allPaths,
+    fallback: false,
+  };
+}
