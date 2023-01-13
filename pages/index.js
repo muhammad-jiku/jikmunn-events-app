@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import HomePage from '../src/components/Home/HomePage';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,22 +29,7 @@ export default function Home({ data }) {
           </Link>
         </nav>
       </header>
-      <main className={styles.main}>
-        <div>
-          {data.map((event, idx) => (
-            <Link key={idx} href={`/events/${event.id}`} passHref>
-              <Image
-                src={`${event.image}`}
-                alt={`${event.title}`}
-                width={200}
-                height={200}
-              />
-              <h2>{event.title}</h2>
-              <p>{event.description}</p>
-            </Link>
-          ))}
-        </div>
-      </main>
+      <HomePage data={data} />
     </>
   );
 }
