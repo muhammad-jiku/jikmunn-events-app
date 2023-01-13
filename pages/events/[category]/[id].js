@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
 
@@ -5,7 +6,17 @@ function SingleEvent({ data }) {
   console.log(data);
   return (
     <div className={styles.main}>
-      <h1>Single Event </h1>
+      <div>
+        <Image
+          src={`${data.image}`}
+          alt={`${data.title}`}
+          width={1000}
+          height={500}
+        />
+        <h2>{data.title}</h2>
+        <h3>{data.city} City </h3>
+        <p>{data.description}</p>
+      </div>
     </div>
   );
 }
@@ -19,8 +30,10 @@ export async function getStaticPaths() {
     // console.log(event);
     return {
       params: {
-        category: event.city,
-        id: event?.id,
+        // category: data.city,
+        // id: event?.id,
+        category: event?.city?.toString(),
+        id: event?.id?.toString(),
       },
     };
   });
@@ -37,7 +50,7 @@ export async function getStaticProps(context) {
   const data = await import('/data/data.json');
   const { allEvents } = data;
   // console.log(allEvents);
-  const result = allEvents.filter((event) => id === event?.id);
+  const result = allEvents.find((event) => id === event?.id);
   // console.log(result);
   return {
     props: {
