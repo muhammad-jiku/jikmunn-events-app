@@ -28,3 +28,16 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+export async function getStaticProps(context) {
+  const id = context.params.category;
+  const data = await import('/data/data.json');
+  const { allEvents } = data;
+  const result = allEvents.filter((event) => id === event?.id);
+
+  return {
+    props: {
+      data: result,
+    },
+  };
+}
