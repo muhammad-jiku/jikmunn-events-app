@@ -6,13 +6,13 @@ const EventPages = ({ data }) => {
   return (
     <div className="events_page">
       {data?.map((event, idx) => (
-        <Link key={idx} href={`/events/${event.id}`} passHref>
+        <Link key={idx} href={`/events/${event.id}`} passHref legacyBehavior>
           <a className="card">
             <Image
               src={event.image}
               alt={event.title}
-              width={500}
-              height={500}
+              width={400}
+              height={400}
             />{' '}
             <h2>{event.title} </h2>
           </a>
