@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.main}>
+    <footer>
       <p> &copy; {year} time to code - Events project built wiht Next.js </p>
     </footer>
   );
