@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import SingleEventPerId from '../../../src/components/Events/SingleEvent';
-import styles from '../../../styles/Home.module.css';
 
 function SingleEvent({ data }) {
   // console.log(data);

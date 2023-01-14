@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import styles from '../../../styles/Home.module.css';
 
 const Navbar = () => {
   return (
@@ -27,8 +26,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/about-us" passHref>
-                  <Link href="/about-us"> About us</Link>
+                <Link href="/about" passHref>
+                  <Link href="/about"> About us</Link>
                 </Link>
               </li>
             </ul>

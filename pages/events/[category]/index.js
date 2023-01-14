@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import EventCategories from '../../../src/components/Events/EventCategories';
-import styles from '../../../styles/Home.module.css';
 
 function EventCategory({ data, pageName }) {
   return <EventCategories data={data} pageName={pageName} />;
