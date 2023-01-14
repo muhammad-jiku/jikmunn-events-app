@@ -9,7 +9,12 @@ const EventCategories = ({ data, pageName }) => {
 
       <div className="content">
         {data.map((event, idx) => (
-          <Link key={idx} href={`/events/${event.city}/${event.id}`} passHref>
+          <Link
+            key={idx}
+            href={`/events/${event.city}/${event.id}`}
+            passHref
+            legacyBehavior
+          >
             <a className="card">
               <Image
                 width={300}
