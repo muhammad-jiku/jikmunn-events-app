@@ -6,34 +6,36 @@ import styles from '../../../styles/Home.module.css';
 const Navbar = () => {
   return (
     <header>
-      <div className="topNav">
-        <Image
-          src="/assets/images/logo_black.png"
-          alt="logo"
-          width={50}
-          height={50}
-        />
-        <nav>
-          <ul>
-            <li>
-              <Link href="/" passHref>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/events" passHref>
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" passHref>
-                About Us
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <div>
+        <div className="topNav">
+          <Image
+            src="/assets/images/logo_black.png"
+            alt="logo"
+            width={50}
+            height={50}
+          />
+          <nav>
+            <ul>
+              <li>
+                <Link href="/" passHref>
+                  <Link href="/"> Home</Link>
+                </Link>
+              </li>
+              <li>
+                <Link href="/events" passHref>
+                  <Link href="/events"> Events</Link>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about-us" passHref>
+                  <Link href="/about-us"> About us</Link>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <p className="title"> This is an events app</p>
       </div>
-      <h1> This is an events app</h1>
     </header>
   );
 };
