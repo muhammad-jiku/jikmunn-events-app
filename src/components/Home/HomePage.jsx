@@ -5,17 +5,25 @@ import styles from '../../../styles/Home.module.css';
 
 const HomePage = ({ data }) => {
   return (
-    <div>
+    <div className="home_body">
       {data.map((event, idx) => (
         <Link key={idx} href={`/events/${event.id}`} passHref>
-          <Image
-            src={`${event.image}`}
-            alt={`${event.title}`}
-            width={200}
-            height={200}
-          />
-          <h2>{event.title}</h2>
-          <p>{event.description}</p>
+          {/* <Link key={idx} href={`/events/${event.id}`} passHref legacyBehavior>
+          <a className="card" href={`/events/${event.id}`}> */}
+          <Link className="card" href={`/events/${event.id}`}>
+            <div className="image">
+              <Image
+                src={`${event.image}`}
+                alt={`${event.title}`}
+                width={500}
+                height={250}
+              />
+            </div>
+            <div className="content">
+              <h2>{event.title}</h2>
+              <p>{event.description}</p>
+            </div>
+          </Link>
         </Link>
       ))}
     </div>
