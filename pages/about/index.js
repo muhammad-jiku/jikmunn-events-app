@@ -1,8 +1,9 @@
 import React from 'react';
 
 function AboutUs() {
+  // console.log('object');
   return (
-    <div className={styles.main}>
+    <div>
       <h1>This is our About Us page</h1>
       <p>
         Sent oer my the from my tinkled. Have and shore the was from than
