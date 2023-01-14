@@ -1,24 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
+import SingleEventPerId from '../../../src/components/Events/SingleEvent';
 import styles from '../../../styles/Home.module.css';
 
 function SingleEvent({ data }) {
   // console.log(data);
-  return (
-    <div className={styles.main}>
-      <div>
-        <Image
-          src={`${data.image}`}
-          alt={`${data.title}`}
-          width={1000}
-          height={700}
-        />
-        <h2>{data.title}</h2>
-        <h3>{data.city} City </h3>
-        <p>{data.description}</p>
-      </div>
-    </div>
-  );
+  return <SingleEventPerId data={data} />;
 }
 
 export default SingleEvent;
