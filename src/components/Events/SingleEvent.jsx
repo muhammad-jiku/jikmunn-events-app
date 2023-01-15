@@ -1,6 +1,8 @@
+import React, { useRef, useState } from 'react';
+
+// internal imports
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useRef, useState } from 'react';
 
 const SingleEventPerId = ({ data }) => {
   const inputEmail = useRef();
@@ -36,8 +38,8 @@ const SingleEventPerId = ({ data }) => {
       setMessage(data.message);
       inputEmail.current.value = '';
     } catch (error) {
-      setMessage(error.message);
-      console.log(error.message);
+      setMessage('Something went wrong!');
+      // console.log(error.message);
     }
   };
 

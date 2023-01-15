@@ -1,6 +1,8 @@
+import React from 'react';
+
+// internal imports
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 const EventCategories = ({ data, pageName }) => {
   return (

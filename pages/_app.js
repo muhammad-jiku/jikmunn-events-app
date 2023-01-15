@@ -1,7 +1,9 @@
+import React, { useEffect, useState } from 'react';
+
+//  internal imports
 import MainLayout from '../src/components/Layout/MainLayout';
 import '../styles/globals.css';
 import '../styles/general.sass';
-import React, { useEffect, useState } from 'react';
 
 export default function App({ Component, pageProps }) {
   const [showing, setShowing] = useState(false);

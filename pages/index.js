@@ -1,10 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import Link from 'next/link';
-import HomePage from '../src/components/Home/HomePage';
 
-const inter = Inter({ subsets: ['latin'] });
+// internal imports
+import HomePage from '../src/components/Home/HomePage';
 
 export default function Home({ data }) {
   return (

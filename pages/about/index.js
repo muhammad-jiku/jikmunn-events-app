@@ -1,7 +1,6 @@
 import React from 'react';
 
 function AboutUs() {
-  // console.log('object');
   return (
     <div>
       <h1>This is our About Us page</h1>

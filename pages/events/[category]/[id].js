@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import React from 'react';
+
+//  internal imports
 import SingleEventPerId from '../../../src/components/Events/SingleEvent';
 
 function SingleEvent({ data }) {
-  // console.log(data);
   return <SingleEventPerId data={data} />;
 }
 
@@ -13,11 +13,8 @@ export async function getStaticPaths() {
   const data = await import('/data/data.json');
   const { allEvents } = data;
   const allPaths = allEvents?.map((event) => {
-    // console.log(event);
     return {
       params: {
-        // category: data.city,
-        // id: event?.id,
         category: event?.city?.toString(),
         id: event?.id?.toString(),
       },
@@ -32,12 +29,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  // console.log(id);
   const data = await import('/data/data.json');
   const { allEvents } = data;
-  // console.log(allEvents);
   const result = allEvents.find((event) => id === event?.id);
-  // console.log(result);
   return {
     props: {
       data: result,

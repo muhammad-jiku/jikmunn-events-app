@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
+
+// internal imports
 import EventCategories from '../../../src/components/Events/EventCategories';
 
 function EventCategory({ data, pageName }) {

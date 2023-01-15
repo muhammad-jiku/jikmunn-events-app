@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
+
+// internal imports
 import EventPages from '../../src/components/Events/EventPages';
 
 function Events({ data }) {
-  // console.log(data);
   return <EventPages data={data} />;
 }
 

@@ -1,4 +1,6 @@
 import React from 'react';
+
+// internal imports
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 
