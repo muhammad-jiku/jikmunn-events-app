@@ -22,6 +22,10 @@ const SingleEventPerId = ({ data }) => {
           eventId,
         }),
       });
+
+      if (!response.ok) throw new Error(`Error: ${response.status}`);
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.log(error.message);
     }
