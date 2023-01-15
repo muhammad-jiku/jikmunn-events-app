@@ -33,8 +33,10 @@ const SingleEventPerId = ({ data }) => {
 
       if (!response.ok) throw new Error(`Error: ${response.status}`);
       const data = await response.json();
-      console.log(data);
+      setMessage(data.message);
+      inputEmail.current.value = '';
     } catch (error) {
+      setMessage(error.message);
       console.log(error.message);
     }
   };
