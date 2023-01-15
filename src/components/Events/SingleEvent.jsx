@@ -1,7 +1,11 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 
 const SingleEventPerId = ({ data }) => {
+  const inputEmail = useRef('');
+  const onSubmit = () => {
+    console.log('Kire ki khbr?');
+  };
   return (
     <div className="event_single_page">
       <h1> {data.title} </h1>
