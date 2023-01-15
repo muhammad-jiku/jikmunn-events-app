@@ -1,10 +1,18 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
 
 const SingleEventPerId = ({ data }) => {
-  const inputEmail = useRef('');
-  const onSubmit = () => {
-    console.log('Kire ki khbr?');
+  const inputEmail = useRef();
+  const router = useRouter();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const emailValue = inputEmail.current.value;
+    const eventId = router?.query.id;
+
+    console.log(emailValue);
+    console.log(eventId);
   };
   return (
     <div className="event_single_page">
