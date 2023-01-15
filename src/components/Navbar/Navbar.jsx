@@ -7,12 +7,14 @@ const Navbar = () => {
     <header>
       <div>
         <div className="topNav">
-          <Image
-            src="/assets/images/logo_black.png"
-            alt="logo"
-            width={50}
-            height={50}
-          />
+          <Link href="/" passHref>
+            <Image
+              src="/assets/images/logo_black.png"
+              alt="logo"
+              width={50}
+              height={50}
+            />
+          </Link>
           <nav>
             <ul>
               <li>
@@ -33,7 +35,7 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <p className="title"> This is an events app</p>
+        {/* <p className="title"> This is an events app</p> */}
       </div>
     </header>
   );
