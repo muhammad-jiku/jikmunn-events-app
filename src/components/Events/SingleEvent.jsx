@@ -6,14 +6,27 @@ const SingleEventPerId = ({ data }) => {
   const inputEmail = useRef();
   const router = useRouter();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const emailValue = inputEmail.current.value;
     const eventId = router?.query.id;
 
-    console.log(emailValue);
-    console.log(eventId);
+    try {
+      const response = await fetch('/api/email-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: emailValue,
+          eventId,
+        }),
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
   };
+
   return (
     <div className="event_single_page">
       <h1> {data.title} </h1>
